@@ -1,13 +1,7 @@
-import 'bootstrap/dist/css/bootstrap.css';
 import '@/css/globals.css';
-
-import { useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function MyApp({ Component, pageProps }) {
-  useEffect(() => {
-    import('bootstrap/dist/js/bootstrap');
-  }, []);
-
   return (
     <div>
       <Component {...pageProps} />
