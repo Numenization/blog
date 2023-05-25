@@ -9,7 +9,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <SessionProvider>
       <MainNav />
-      <Component {...pageProps} />
+      <div className='p-2'>
+        <Component {...pageProps} />
+      </div>
     </SessionProvider>
   );
 }

@@ -17,11 +17,11 @@ export default function MainNav(props) {
   return (
     <Navbar bg='dark' variant='dark' expand='lg'>
       <Container>
-        <Navbar.Brand href='#'>Nick Spencer</Navbar.Brand>
+        <Navbar.Brand href='/'>Numenization</Navbar.Brand>
         <Navbar.Toggle aria-controls='navbar-nav' />
         <Navbar.Collapse id='navbar-nav'>
           <Nav className='me-auto'>
-            <Nav.Link href='#'>Blog</Nav.Link>
+            <Nav.Link href='/'>Blog</Nav.Link>
           </Nav>
           <Conditional showWhen={status != 'loading'}>
             <Conditional showWhen={status == 'unauthenticated'}>
@@ -31,9 +31,7 @@ export default function MainNav(props) {
             </Conditional>
             <Conditional showWhen={status == 'authenticated'}>
               <div>
-                <span className='text-light p-2'>
-                  Logged in as {user.username}
-                </span>
+                <span className='text-light p-2'>{user.username}</span>
                 <Button variant='outline-danger' onClick={() => signOut()}>
                   Sign Out
                 </Button>
