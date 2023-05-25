@@ -44,8 +44,12 @@ export default async function handler(req, res) {
     post.content = body.content;
   }
 
+  // Validate published
+  if (body.published) {
+    post.published = body.published;
+  }
+
   const result = await prisma.post.create({ data: post });
 
-  res.redirect(201, '/post/' + result.id).end();
-  //res.writeHead(201, { Location: '/' }).end();
+  res.status(201).json(result);
 }
